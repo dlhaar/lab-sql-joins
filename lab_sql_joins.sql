@@ -2,10 +2,9 @@ USE sakila;
 
 -- Write SQL queries to perform the following tasks using the Sakila database:
 -- 1. List the number of films per category.
-SELECT fc.category_id
-	, COUNT(f.film_id) as number_of_films
-FROM film as f
-JOIN film_category as fc on f.film_id = fc.film_id
+SELECT category_id
+	, COUNT(film_id) as number_of_films
+FROM film_category
 GROUP BY 1;
 
 -- 2. Retrieve the store ID, city, and country for each store.
